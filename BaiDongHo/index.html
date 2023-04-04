@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h1 id="timer">00:00:000</h1>
+        <div id="btn">
+            <button class="start" onclick="startTimer()">Start</button>
+            <button class="stop" onclick="stopTimer()">Stop</button>
+            <button class="reset" onclick="resetTimer()">Reset</button>
+        </div>
+    
+        <script>
+            var timer = document.getElementById('timer');
+            var interval;
+		    var milliseconds = 0, seconds = 0, minutes = 0;
+
+            function startTimer() {
+			if (!interval) {
+				interval = setInterval(updateTimer, 10);
+			}
+		       }
+            function stopTimer() {
+			clearInterval(interval);
+			interval = null;
+	    	    }
+
+		    function resetTimer() {
+			clearInterval(interval);
+			interval = null;
+			milliseconds = 0;
+			seconds = 0;
+			minutes = 0;
+			updateTimer();
+            timer.innerHTML = "00:00:000";
+		    }
+
+
+            function updateTimer() {
+			milliseconds += 10;
+			if (milliseconds == 1000) {
+				milliseconds = 0;
+				seconds++;
+			}
+			if (seconds == 60) {
+				seconds = 0;
+				minutes++;
+			}
+			timer.innerHTML = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds ? (seconds > 9 ? seconds : "0" + seconds) : "00") + ":" + (milliseconds > 99 ? milliseconds : (milliseconds > 9 ? "0" + milliseconds : "00" + milliseconds));
+		}
+
+        </script>
+    </div>
+</body>
+</html>

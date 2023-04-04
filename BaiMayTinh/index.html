@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+      <td colspan="4"><input type="text" id="display" disabled></td>
+    </div>
+    <div >
+      <table>
+        <tr>
+          <td><button onclick="press('7')">7</button></td>
+          <td><button onclick="press('8')">8</button></td>
+          <td><button onclick="press('9')">9</button></td>
+          <td><button onclick="press('/')">/</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="press('4')">4</button></td>
+          <td><button onclick="press('5')">5</button></td>
+          <td><button onclick="press('6')">6</button></td>
+          <td><button onclick="press('*')">*</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="press('1')">1</button></td>
+          <td><button onclick="press('2')">2</button></td>
+          <td><button onclick="press('3')">3</button></td>
+          <td><button onclick="press('-')">-</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="press('0')">0</button></td>
+          <td><button onclick="press('.')">.</button></td>
+          <td><button onclick="clearDisplay()">AC</button></td>
+          <td><button onclick="press('+')">+</button></td>
+        </tr>
+        <tr>
+          <td colspan="4"><button onclick="calculate()">=</button></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+          function press(buttonValue) {
+        document.getElementById("display").value += buttonValue;
+      }
+
+      function clearDisplay() {
+        document.getElementById("display").value = "";
+      }
+
+      function calculate() {
+        var expression = document.getElementById("display").value;
+        var result = eval(expression);
+        document.getElementById("display").value = result;
+      }
+      </script>
+</body>
+</html>
+
