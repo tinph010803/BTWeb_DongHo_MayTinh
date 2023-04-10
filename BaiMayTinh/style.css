@@ -2,3 +2,57 @@
     margin: 0;
     padding: 0;
 }
+/* Thiết lập phông chữ và màu nền cho body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Thiết lập kích thước cho div chứa input */
+div:first-of-type {
+  width: 300px;
+  margin: 20px auto;
+}
+
+/* Thiết lập kích thước cho bảng */
+table {
+  width: 300px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+/* Thiết lập phông chữ, màu nền và màu chữ cho các button */
+button {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Thiết lập màu nền và màu chữ cho các button khi rê chuột vào */
+button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Thiết lập kích thước cho button = */
+button:last-of-type {
+  width: 100%;
+  padding: 15px 0;
+  margin-top: 10px;
+}
+
+/* Thiết lập kích thước cho input */
+#display {
+  width: 100%;
+  padding: 10px;
+  font-size: 24px;
+  text-align: right;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+}
